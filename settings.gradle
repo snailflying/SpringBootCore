@@ -1,0 +1,4 @@
+rootProject.name = 'spring-boot-core'
+include 'core'
+include 'web'
+
