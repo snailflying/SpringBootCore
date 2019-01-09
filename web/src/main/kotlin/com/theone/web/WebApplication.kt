@@ -1,5 +1,6 @@
 package com.theone.web
 
+import com.theone.web.service.WxNettyService
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -8,5 +9,8 @@ import org.springframework.boot.runApplication
 
 fun main(args: Array<String>) {
 
-    runApplication<WebApplication>(*args)
+//    runApplication<WebApplication>(*args)
+    val context = runApplication<WebApplication>(*args)
+    val nettyServer = context.getBean(WxNettyService::class.java)
+    nettyServer.run()
 }

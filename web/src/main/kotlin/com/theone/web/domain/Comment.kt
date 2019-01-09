@@ -13,12 +13,10 @@ import javax.persistence.*
 @Table(name = "comment")
 class Comment(
 
-//        @SerializedName("user_id")
         @JsonProperty("user_id")
         @Transient
         var userId: Long? = null,
 
-//        @SerializedName("shop_id")
         @JsonProperty("shop_id")
         @Transient
         var shopId: Long? = null,

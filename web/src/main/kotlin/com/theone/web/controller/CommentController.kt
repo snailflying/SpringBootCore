@@ -6,6 +6,7 @@ import com.theone.core.controller.ExecuteBody
 import com.theone.core.exception.BaseException
 import com.theone.web.domain.Comment
 import com.theone.web.service.CommentService
+import com.theone.web.util.RedisDao
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -18,14 +19,17 @@ import javax.servlet.http.HttpServletResponse
  * Created by aaron on 22/05/2017.
  */
 @RestController
-@RequestMapping(path = arrayOf("/v1/comments"))
+@RequestMapping(path = ["/v1/comments"])
 class CommentController : BaseEntityController<Comment>() {
 
 
     @Autowired
     private val commentService: CommentService? = null
 
-    @RequestMapping(path = arrayOf("/user/{userId}"), method = arrayOf(RequestMethod.GET))
+//    @Autowired
+//    private lateinit var redisDao: RedisDao
+
+    @RequestMapping(path = ["/user/{userId}"], method = [RequestMethod.GET])
     fun user(request: HttpServletRequest,
              response: HttpServletResponse,
              @PathVariable(value = "userId") userId: Long?): ResponseEntity<GenericResponse> {

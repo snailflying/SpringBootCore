@@ -79,7 +79,7 @@ open abstract class BaseEntityService<T : BaseEntity> : IBaseEntityService<T> {
 
     /**
      * @param item
-     * @return true need filter   default false
+     * @return true need netty   default false
      * @throws BaseException
      */
     @Throws(BaseException::class)
